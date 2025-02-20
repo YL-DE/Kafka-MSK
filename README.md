@@ -1,8 +1,7 @@
-# Project README
-
-
 ## Azure Pipelines
 
-Azure Pipelines Documentation: https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops
+•	Developed Debezium PostgreSQL connector to capture real-time CDC in AWS MSK cluster.
+•	Built custom consumer application to consume Kafka data and load into data lake landing tables. 
+•	Deployed Kafka HQ as a cluster UI.
+•	Terraform MSK cluster, and connectors into Azure Devops Pipeline. 
 
-An Azure Pipeline has been created for your project. The name of the pipeline is the same as the project name. To modify the Azure Pipeline edit the `azure-pipelines.yml` file via your IDE or through the Web UI.
