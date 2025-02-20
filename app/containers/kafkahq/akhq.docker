@@ -1,0 +1,14 @@
+FROM tchiotludo/akhq:latest
+USER root
+ARG BROKER_STRING
+###ENV BROKER_STRING=${BROKER_STRING} 
+ENV BROKER_STRING=${BROKER_STRING} 
+
+RUN apt-get update
+RUN apt-get install -y gettext-base
+
+COPY entrypoint.sh /etc/entrypoint.sh
+COPY application.tpl /tmp/application.tpl
+
+RUN chmod +x /etc/entrypoint.sh
+ENTRYPOINT ["/etc/entrypoint.sh"]

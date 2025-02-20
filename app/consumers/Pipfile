@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pandas = "*"
+boto3 = "*"
+psycopg2-binary = "*"
+kafka-python= "*"
+
+[packages]
+pandas = "*"
+boto3 = "*"
+psycopg2-binary = "*"
+kafka-python= "*"
+
+[requires]
+python_version = "3.7"

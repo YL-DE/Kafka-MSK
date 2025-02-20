@@ -1,0 +1,6 @@
+topics:
+  CRM:
+    partitions: 3
+    configs:
+      cleanup.policy: delete
+      retention.ms: 15778800000 # 6 months

@@ -1,0 +1,46 @@
+ # File: /home/oracle/ogg-bd/dirprm/ccb_kc.props
+# ---------------------------------------------------
+gg.handlerlist=kafkaconnect
+ 
+#The handler properties
+gg.handler.kafkaconnect.type=kafkaconnect
+gg.handler.kafkaconnect.kafkaProducerConfigFile=ccb_kafkaconnect.properties
+gg.handler.kafkaconnect.mode=tx
+ 
+#The following selects the topic name based only on the schema name
+gg.handler.kafkaconnect.topicMappingTemplate=CDC-${schemaName}
+ 
+#The following selects the message key using the concatenated primary keys
+gg.handler.kafkaconnect.keyMappingTemplate=${primaryKeys}
+ 
+#The formatter properties
+gg.handler.kafkaconnect.messageFormatting=op
+gg.handler.kafkaconnect.insertOpKey=I
+gg.handler.kafkaconnect.updateOpKey=U
+gg.handler.kafkaconnect.deleteOpKey=D
+gg.handler.kafkaconnect.truncateOpKey=T
+gg.handler.kafkaconnect.treatAllColumnsAsStrings=false
+gg.handler.kafkaconnect.iso8601Format=false
+gg.handler.kafkaconnect.pkUpdateHandling=abend
+gg.handler.kafkaconnect.includeTableName=true
+gg.handler.kafkaconnect.includeOpType=true
+gg.handler.kafkaconnect.includeOpTimestamp=true
+gg.handler.kafkaconnect.includeCurrentTimestamp=true
+gg.handler.kafkaconnect.includePosition=true
+gg.handler.kafkaconnect.includePrimaryKeys=true
+gg.handler.kafkaconnect.includeTokens=true
+ 
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+ 
+gg.log=log4j
+gg.log.level=INFO
+ 
+gg.report.time=30sec
+ 
+# Apache Kafka Classpath
+# Put the path of the "libs" folder inside the Kafka home path
+gg.classpath=/home/oracle/kafka_2.11-2.1.1/libs/*
+ 
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
